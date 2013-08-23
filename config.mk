@@ -1,5 +1,5 @@
 # dwm version
-VERSION = 6.0
+VERSION = 6.0-patched
 
 # Customize below to fit your system
 
@@ -7,21 +7,22 @@ VERSION = 6.0
 PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
 
-X11INC = /usr/X11R6/include
-X11LIB = /usr/X11R6/lib
-
 # Xinerama
-XINERAMALIBS = -L${X11LIB} -lXinerama
-XINERAMAFLAGS = -DXINERAMA
+XINERAMA_LIBS = -lXinerama
+XINERAMA_CPPFLAGS = -DXINERAMA
+
+# Xft
+XFT_INCS = -I/usr/include/freetype2
+XFT_LIBS = -lXft
 
 # includes and libs
-INCS = -I. -I/usr/include -I${X11INC} -I/usr/include/freetype2
-LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS} -lXft
+INCS = -I. ${XFT_INCS}
+LIBS = -lX11 ${XINERAMA_LIBS} ${XFT_LIBS}
 
 # flags
-CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMA_CPPFLAGS}
 #CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
-CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
+CFLAGS = -std=c99 -pedantic -Wall -O3 -march=native ${INCS} ${CPPFLAGS}
 #LDFLAGS = -g ${LIBS}
 LDFLAGS = -s ${LIBS}
 
