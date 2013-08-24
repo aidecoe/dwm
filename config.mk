@@ -19,8 +19,16 @@ XFT_LIBS = -lXft
 INCS = -I. ${XFT_INCS}
 LIBS = -lX11 ${XINERAMA_LIBS} ${XFT_LIBS}
 
+ifeq (${HOSTNAME},ittemni)
+HOST_ID := 1
+else ifeq (${HOSTNAME},freja)
+HOST_ID = 2
+else
+HOST_ID := 0
+endif
+
 # flags
-CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMA_CPPFLAGS}
+CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMA_CPPFLAGS} -DHOST_ID=$(HOST_ID)
 #CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
 CFLAGS = -std=c99 -pedantic -Wall -O3 -march=native ${INCS} ${CPPFLAGS}
 #LDFLAGS = -g ${LIBS}

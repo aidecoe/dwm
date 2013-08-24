@@ -1,13 +1,36 @@
 /* See LICENSE file for copyright and license details. */
 
+#define ITTEMNI_ID 1
+#define FREJA_ID 2
+
+#ifndef HOST_ID
+#define HOST_ID 0
+#endif
+
 /* appearance */
 static const char font[]            = "Terminus-9";
+#if HOST_ID == ITTEMNI_ID
+static const char normbordercolor[] = "#333333";
+static const char normbgcolor[]     = "#222222";
+static const char normfgcolor[]     = "#bbbbbb";
+static const char selbordercolor[]  = "#005577";
+static const char selbgcolor[]      = "#005577";
+static const char selfgcolor[]      = "#eeeeee";
+#elif HOST_ID == FREJA_ID
+static const char normbordercolor[] = "#333333";
+static const char normbgcolor[]     = "#222222";
+static const char normfgcolor[]     = "#bbbbbb";
+static const char selbordercolor[]  = "#a00000";
+static const char selbgcolor[]      = "#222222";
+static const char selfgcolor[]      = "#cc0000";
+#else
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
 static const char selbordercolor[]  = "#005577";
 static const char selbgcolor[]      = "#005577";
 static const char selfgcolor[]      = "#eeeeee";
+#endif
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int bottomgap = 22;       /* reserve space over bottom of screen */
 static const unsigned int snap      = 32;       /* snap pixel */

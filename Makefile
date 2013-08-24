@@ -10,6 +10,7 @@ all: options dwm
 
 options:
 	@echo dwm build options:
+	@echo "HOSTNAME = ${HOSTNAME}"
 	@echo "CFLAGS   = ${CFLAGS}"
 	@echo "LDFLAGS  = ${LDFLAGS}"
 	@echo "CC       = ${CC}"
