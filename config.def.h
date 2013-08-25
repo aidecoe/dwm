@@ -47,7 +47,8 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,       NULL,       1 << 0,       False,        0 },
 	{ "Opera",    NULL,       NULL,       1 << 0,       False,        0 },
 	{ "Emacs",    NULL,       NULL,       1 << 1,       False,        0 },
-	{ "Gajim",    "Gajim",   "Gajim",     1 << 2,       False,        0 },
+	{ "Gajim",    NULL,       NULL,       1 << 2,       False,        0 },
+	{ NULL,       NULL,       "irc",      1 << 3,       False,        0 },
 	{ "Gimp",     NULL,       NULL,       1 << 4,       True,        -1 },
 	{ "MPlayer",  NULL,       NULL,       1 << 4,       True,        -1 },
 };
