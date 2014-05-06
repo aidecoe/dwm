@@ -49,8 +49,9 @@ static const Rule rules[] = {
 	{ "Emacs",    NULL,       NULL,       1 << 1,       False,        0 },
 	{ "Gajim",    NULL,       NULL,       1 << 2,       False,        0 },
 	{ NULL,       NULL,       "irc",      1 << 3,       False,        0 },
-	{ "Gimp",     NULL,       NULL,       1 << 4,       True,        -1 },
-	{ "MPlayer",  NULL,       NULL,       1 << 4,       True,        -1 },
+	{ "keepassx", NULL,       NULL,       1 << 4,       False,        0 },
+	{ "Gimp",     NULL,       NULL,       1 << 5,       True,        -1 },
+	{ "MPlayer",  NULL,       NULL,       1 << 5,       True,        -1 },
 };
 
 /* layout(s) */
