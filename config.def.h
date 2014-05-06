@@ -85,8 +85,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
-static const char *rangercmd[]  = { "urxvt", "-e", "ranger", NULL };
+static const char *termcmd[]  = { "terminology", NULL };
+static const char *rangercmd[]  = { "terminology", "-e", "ranger", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
