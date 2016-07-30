@@ -51,6 +51,8 @@ install: all
 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
 	@sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
+	@cp -f xselopen.sh ${DESTDIR}${PREFIX}/bin/xselopen
+	@chmod 755 ${DESTDIR}${PREFIX}/bin/xselopen
 
 uninstall:
 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
